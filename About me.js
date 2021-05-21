@@ -1,30 +1,18 @@
-var x,speed
 function setup() {
+    createCanvas(0, 0)
+    input = createInput("Leave your contact information as well!")
+    input.position(550,800)
+    input.size(250,20)
+    button = createButton("submit")
+    button.position(650,820)
+    button.mousePressed(received)
+  }
   
- var c =  createCanvas(310,50)
- c.position(795,740)
+  function draw() {
+    background(220);
+  }
   
-  input = createInput("Tell me what you think about me!")
-  input.position(795,800)
-  input.size(230,20)
-
-  button = createButton("submit")
-  button.position(795,830)
-  button.mousePressed(received)
- 
-
-   x= 0
-  speed = 0
-}
-
-
-function draw() {
-  background("lightblue");
-
-  
- 
-}
-
-function received (){
-  alert("Comment received: " + input.value() + "\n" + "Thanks for leaving comment!") 
-}
+  function received (){
+    alert("Contact information received: " + input.value())
+    
+  }
