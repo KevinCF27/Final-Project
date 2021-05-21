@@ -1,18 +1,39 @@
+var x,speed
 function setup() {
-    createCanvas(0, 0)
-    input = createInput("Leave your contact information as well!")
-    input.position(550,800)
-    input.size(250,20)
-    button = createButton("submit")
-    button.position(650,820)
-    button.mousePressed(received)
-  }
   
-  function draw() {
-    background(220);
-  }
+ var c =  createCanvas(310,50)
+ c.position(795,740)
   
-  function received (){
-    alert("Contact information received: " + input.value())
-    
+  input = createInput("Tell me what you think about me!")
+  input.position(795,800)
+  input.size(230,20)
+
+  button = createButton("submit")
+  button.position(795,830)
+  button.mousePressed(received)
+ 
+
+   x= 0
+  speed = 0
+}
+function preload(){
+  ai = loadImage("AI.png");
+}
+
+function draw() {
+  background("lightblue");
+ image(ai,x,0,30,50)
+  
+  x+=speed
+    if(x < width){
+    speed+= 1
   }
+  else if(x > width){
+    speed-=3
+      
+  }
+}
+
+function received (){
+  alert("Comment received: " + input.value() + "\n" + "Thanks for leaving comment!") 
+}
