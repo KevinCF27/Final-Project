@@ -16,22 +16,13 @@ function setup() {
    x= 0
   speed = 0
 }
-function preload(){
-  ai = loadImage("AI.png");
-}
+
 
 function draw() {
   background("lightblue");
- image(ai,x,0,30,50)
+
   
-  x+=speed
-    if(x < width){
-    speed+= 1
-  }
-  else if(x > width){
-    speed-=3
-      
-  }
+ 
 }
 
 function received (){
